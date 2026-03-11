@@ -6,12 +6,12 @@ export const translations = {
   en: {
     // Meta
     meta: {
-      title: 'Kamil Jaworski – .NET Software Engineer',
+      title: 'Kamil Jaworski - .NET Software Engineer',
       description:
         'Kamil Jaworski is a Software Engineer specialising in .NET, C#, cloud architecture, and distributed systems. Based in Częstochowa, Poland.',
       keywords:
         '.NET developer, software engineer, C#, ASP.NET, Azure, AWS, Częstochowa, Poland, backend developer',
-      ogTitle: 'Kamil Jaworski – .NET Software Engineer',
+      ogTitle: 'Kamil Jaworski - .NET Software Engineer',
       ogDescription:
         'Software Engineer specialising in .NET, cloud architecture and distributed systems.',
     },
@@ -43,8 +43,8 @@ export const translations = {
     about: {
       heading: 'About',
       body: [
-        "I'm a Software Engineer with 7 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems — from microservices to event-driven architectures.",
-        'Over the course of my career I have worked on large-scale platforms in the travel and e-commerce industries, contributed to cloud migrations on both Azure and AWS, and led engineering teams through production launches. I care deeply about code quality, testability, and building systems that are both reliable and maintainable.',
+        "I'm a Software Engineer with 7 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems - from microservices to event-driven architectures.",
+        'Over the course of my career I have worked on large-scale platforms in the travel and e-commerce industries, contributed to cloud migrations on both Azure and AWS, and at one point took on a team lead role during a platform launch. I care deeply about code quality, testability, and building systems that are both reliable and maintainable.',
         "When I'm not at the keyboard, I'm usually exploring new technologies, tinkering with side projects, or enjoying the outdoors.",
       ],
     },
@@ -155,7 +155,7 @@ export const translations = {
           end: 'Dec 2020',
           bullets: [
             'Contributed to building a new microservices-based e-commerce platform from scratch to replace a legacy system, operating in 5 European markets.',
-            'Designed and implemented microservices for search, orders, and payments — including integrations with PayPal and PayU (BLIK one-click payments).',
+            'Designed and implemented microservices for search, orders, and payments - including integrations with PayPal and PayU (BLIK one-click payments).',
             'Implemented asynchronous communication between services using Azure Service Bus.',
             'Supported cloud deployment and architecture on Microsoft Azure.',
           ],
