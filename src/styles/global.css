@@ -1,39 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-slate-950: #020617;
-  --color-teal-400: #2dd4bf;
-  --color-teal-300: #5eead4;
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Brand colours */
+  --color-accent: #818cf8;       /* indigo-400 */
+  --color-accent-light: #a5b4fc; /* indigo-300 */
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #21262d;
+  --color-text: #c9d1d9;
+  --color-text-muted: #8b949e;
+  --color-text-dim: #484f58;
+  --color-heading: #f0f6fc;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #0f172a;
+  background-color: var(--color-bg);
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #0f172a;
-  color: #94a3b8;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   cursor: default;
 }
 
-/* Cursor spotlight */
+/* Cursor spotlight — indigo tint */
 #spotlight {
   pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 30;
   background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(45, 212, 191, 0.06),
+    650px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(129, 140, 248, 0.07),
     transparent 80%
   );
-  transition: background 0.1s;
 }
 
-/* Section scroll offset for sticky sidebar nav */
+/* Section scroll margin */
 section[id] {
   scroll-margin-top: 4rem;
 }
@@ -42,83 +50,88 @@ section[id] {
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1.5;
-  background-color: rgba(45, 212, 191, 0.1);
-  color: #2dd4bf;
+  padding: 0.2rem 0.65rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  background-color: rgba(129, 140, 248, 0.12);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(129, 140, 248, 0.18);
 }
 
-/* Experience card hover */
-.exp-card {
+/* Experience / cert card hover */
+.exp-card,
+.cert-card {
   position: relative;
   border-radius: 0.5rem;
   padding: 1.25rem 1.5rem;
-  transition: background 0.2s;
+  border: 1px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.exp-card:hover {
-  background-color: rgba(148, 163, 184, 0.05);
+.exp-card:hover,
+.cert-card:hover {
+  background-color: rgba(240, 246, 252, 0.03);
+  border-color: var(--color-border);
 }
 
 .exp-card:hover .exp-company {
-  color: #2dd4bf;
+  color: var(--color-accent);
 }
 
-/* Nav link highlight */
+/* Numbered nav */
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  gap: 0.875rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  transition: color 0.2s, transform 0.2s;
   text-transform: uppercase;
-  color: #64748b;
-  transition: color 0.2s, gap 0.2s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e2e8f0;
+  color: var(--color-heading);
+  transform: translateX(4px);
 }
 
-.nav-link .nav-line {
-  display: block;
-  height: 1px;
-  width: 2rem;
-  background: currentColor;
-  transition: width 0.2s;
+.nav-link .nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  min-width: 1.5rem;
 }
 
-.nav-link:hover .nav-line,
-.nav-link.active .nav-line {
-  width: 4rem;
+.nav-link:hover .nav-num,
+.nav-link.active .nav-num {
+  opacity: 1;
+}
+
+/* Accent coloured text link */
+.accent-link {
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+
+.accent-link:hover {
+  color: var(--color-accent-light);
 }
 
 /* Social icons */
 .social-link {
-  color: #475569;
+  color: var(--color-text-dim);
   transition: color 0.2s, transform 0.2s;
 }
 
 .social-link:hover {
-  color: #e2e8f0;
+  color: var(--color-heading);
   transform: translateY(-2px);
-}
-
-/* Certificate card */
-.cert-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  border-radius: 0.5rem;
-  padding: 1.25rem 1.5rem;
-  transition: background 0.2s;
-}
-
-.cert-card:hover {
-  background-color: rgba(148, 163, 184, 0.05);
 }

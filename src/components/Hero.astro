@@ -6,47 +6,38 @@ interface Props {
 }
 
 const { t } = Astro.props;
+
+const navItems = [
+  { href: '#about',        label: t.nav.about,        num: '01' },
+  { href: '#experience',   label: t.nav.experience,   num: '02' },
+  { href: '#certificates', label: t.nav.certificates, num: '03' },
+  { href: '#skills',       label: t.nav.skills,       num: '04' },
+];
 ---
 
 <header class="flex flex-col gap-4 lg:sticky lg:top-0 lg:max-h-screen lg:justify-between lg:py-24">
   <div>
-    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl" style="color: var(--color-heading)">
       {t.hero.name}
     </h1>
-    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200">
+    <h2 class="mt-3 text-base font-medium tracking-wide" style="color: var(--color-accent-light)">
       {t.hero.title}
     </h2>
-    <p class="mt-4 max-w-xs leading-normal text-slate-400">
+    <p class="mt-4 max-w-xs leading-relaxed text-sm" style="color: var(--color-text-muted)">
       {t.hero.tagline}
     </p>
 
-    <!-- Nav -->
-    <nav class="nav mt-12 hidden lg:block" aria-label="On-page sections">
-      <ul class="flex flex-col gap-4">
-        <li>
-          <a href="#about" class="nav-link">
-            <span class="nav-line"></span>
-            {t.nav.about}
-          </a>
-        </li>
-        <li>
-          <a href="#experience" class="nav-link">
-            <span class="nav-line"></span>
-            {t.nav.experience}
-          </a>
-        </li>
-        <li>
-          <a href="#certificates" class="nav-link">
-            <span class="nav-line"></span>
-            {t.nav.certificates}
-          </a>
-        </li>
-        <li>
-          <a href="#skills" class="nav-link">
-            <span class="nav-line"></span>
-            {t.nav.skills}
-          </a>
-        </li>
+    <!-- Numbered nav — desktop only -->
+    <nav class="mt-12 hidden lg:block" aria-label="On-page sections">
+      <ul class="flex flex-col gap-3">
+        {navItems.map(({ href, label, num }) => (
+          <li>
+            <a href={href} class="nav-link">
+              <span class="nav-num">{num}</span>
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   </div>
@@ -90,6 +81,5 @@ const { t } = Astro.props;
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
       </svg>
     </a>
-
   </div>
 </header>
