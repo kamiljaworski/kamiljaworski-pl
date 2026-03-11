@@ -1,8 +1,8 @@
 ---
 // Root page: immediately redirect based on browser language.
-// Falls back to /en/ for any non-Polish language.
+// Falls back to en/ for any non-Polish language.
 // No cookies used — navigator.language is read fresh every visit.
-const base = import.meta.env.BASE_URL; // e.g. '/kamiljaworski-pl/' or '/'
+// Uses a relative redirect so it works under any base path.
 ---
 
 <!doctype html>
@@ -10,11 +10,13 @@ const base = import.meta.env.BASE_URL; // e.g. '/kamiljaworski-pl/' or '/'
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
-    <!-- Fallback for no-JS: redirect to English -->
-    <meta http-equiv="refresh" content={`0; url=${base}en/`} />
-    <script define:vars={{ base }}>
+    <!-- Fallback for no-JS: relative redirect to English -->
+    <meta http-equiv="refresh" content="0; url=en/" />
+    <script is:inline>
       (function () {
         var lang = navigator.language || navigator.userLanguage || '';
+        // Ensure current path ends with a slash before appending the locale
+        var base = window.location.pathname.replace(/\/?$/, '/');
         if (lang.toLowerCase().startsWith('pl')) {
           window.location.replace(base + 'pl/');
         } else {
