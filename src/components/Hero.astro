@@ -95,7 +95,7 @@ const { t, lang } = Astro.props;
 
     <!-- Language toggle -->
     <a
-      href={t.lang.switchToHref}
+      href={`${import.meta.env.BASE_URL}${lang === 'en' ? 'pl' : 'en'}/`}
       class="social-link ml-1 text-sm font-semibold tracking-widest uppercase"
       aria-label={t.lang.switchLabel}
       title={t.lang.switchLabel}
