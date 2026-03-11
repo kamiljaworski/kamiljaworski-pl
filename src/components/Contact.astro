@@ -63,6 +63,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.namePlaceholder}
           class="form-input"
         />
+        <p id="error-name" class="hidden mt-1 text-xs" style="color: #f87171">This field is required.</p>
       </div>
 
       <!-- Email -->
@@ -79,6 +80,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.emailPlaceholder}
           class="form-input"
         />
+        <p id="error-email" class="hidden mt-1 text-xs" style="color: #f87171">Please enter a valid email address.</p>
       </div>
 
       <!-- Subject (optional) -->
@@ -109,6 +111,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.messagePlaceholder}
           class="form-input"
         ></textarea>
+        <p id="error-message" class="hidden mt-1 text-xs" style="color: #f87171">This field is required.</p>
       </div>
 
       <!-- Cloudflare Turnstile -->
@@ -140,12 +143,49 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
   const errorEl = document.getElementById('contact-error');
   const submitBtn = document.getElementById('contact-submit');
 
+  // Helper: toggle field error visibility and border
+  function setFieldError(inputId, errorId, hasError) {
+    const input = document.getElementById(inputId);
+    const errorEl = document.getElementById(errorId);
+    if (hasError) {
+      errorEl.classList.remove('hidden');
+      input.style.borderColor = '#f87171';
+    } else {
+      errorEl.classList.add('hidden');
+      input.style.borderColor = '';
+    }
+  }
+
+  // Clear errors on input
+  ['contact-name', 'contact-email', 'contact-message'].forEach((id) => {
+    document.getElementById(id).addEventListener('input', () => {
+      const errorId = 'error-' + id.replace('contact-', '');
+      setFieldError(id, errorId, false);
+    });
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Hide previous feedback
     successEl.classList.add('hidden');
     errorEl.classList.add('hidden');
+
+    // Validate required fields
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let valid = true;
+    setFieldError('contact-name', 'error-name', !name);
+    if (!name) valid = false;
+    setFieldError('contact-email', 'error-email', !email || !emailPattern.test(email));
+    if (!email || !emailPattern.test(email)) valid = false;
+    setFieldError('contact-message', 'error-message', !message);
+    if (!message) valid = false;
+
+    if (!valid) return;
 
     // Disable button while submitting
     submitBtn.disabled = true;
