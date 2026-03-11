@@ -43,7 +43,7 @@ export const translations = {
     about: {
       heading: 'About',
       body: [
-        "I'm a Software Engineer with over 5 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems — from microservices to event-driven architectures.",
+        "I'm a Software Engineer with almost 7 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems — from microservices to event-driven architectures.",
         'Over the course of my career I have worked on large-scale platforms in the travel and e-commerce industries, contributed to cloud migrations on both Azure and AWS, and led engineering teams through production launches. I care deeply about code quality, testability, and building systems that are both reliable and maintainable.',
         "When I'm not at the keyboard, I'm usually exploring new technologies, tinkering with side projects, or enjoying the outdoors.",
       ],
