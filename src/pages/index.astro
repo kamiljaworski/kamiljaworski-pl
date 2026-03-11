@@ -1,0 +1,26 @@
+---
+// Root page: immediately redirect based on browser language.
+// Falls back to /en/ for any non-Polish language.
+// No cookies used — navigator.language is read fresh every visit.
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <!-- Fallback for no-JS: redirect to English -->
+    <meta http-equiv="refresh" content="0; url=/en/" />
+    <script is:inline>
+      (function () {
+        var lang = navigator.language || navigator.userLanguage || '';
+        if (lang.toLowerCase().startsWith('pl')) {
+          window.location.replace('/pl/');
+        } else {
+          window.location.replace('/en/');
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

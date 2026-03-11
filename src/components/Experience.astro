@@ -1,0 +1,75 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="experience" aria-label={t.experience.heading} class="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24">
+  <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
+    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:hidden">
+      {t.experience.heading}
+    </h2>
+  </div>
+
+  <ol class="group/list flex flex-col gap-1">
+    {t.experience.entries.map((entry) => (
+      <li class="group">
+        <div class="exp-card group-hover/list:opacity-60 hover:!opacity-100 transition-opacity duration-200">
+          <!-- Date -->
+          <div class="mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+            {entry.start} — {entry.end}
+          </div>
+
+          <!-- Role & company -->
+          <h3 class="font-medium leading-snug text-slate-200">
+            {entry.role}
+            <span class="exp-company text-slate-400 transition-colors duration-200">
+              {' · '}
+              {entry.company}
+            </span>
+          </h3>
+          <p class="mt-0.5 text-xs text-slate-500">{entry.location}</p>
+
+          <!-- Bullets -->
+          <ul class="mt-3 flex flex-col gap-1.5">
+            {entry.bullets.map((bullet) => (
+              <li class="flex gap-2 text-sm text-slate-400 leading-relaxed">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500"></span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Tags -->
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+            {entry.tags.map((tag) => (
+              <li>
+                <span class="tag">{tag}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <!-- LinkedIn link -->
+  <div class="mt-8">
+    <a
+      href="https://www.linkedin.com/in/jaworskikamil/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group inline-flex items-center gap-2 text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors duration-200"
+      aria-label="Full LinkedIn profile"
+    >
+      View full profile on LinkedIn
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
+        <path d="M7 17 17 7M7 7h10v10"/>
+      </svg>
+    </a>
+  </div>
+</section>

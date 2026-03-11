@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #020617;
+  --color-teal-400: #2dd4bf;
+  --color-teal-300: #5eead4;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0f172a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0f172a;
+  color: #94a3b8;
+  cursor: default;
+}
+
+/* Cursor spotlight */
+#spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(45, 212, 191, 0.06),
+    transparent 80%
+  );
+  transition: background 0.1s;
+}
+
+/* Section scroll offset for sticky sidebar nav */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+/* Tag pill */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: rgba(45, 212, 191, 0.1);
+  color: #2dd4bf;
+}
+
+/* Experience card hover */
+.exp-card {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.exp-card:hover {
+  background-color: rgba(148, 163, 184, 0.05);
+}
+
+.exp-card:hover .exp-company {
+  color: #2dd4bf;
+}
+
+/* Nav link highlight */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #e2e8f0;
+}
+
+.nav-link .nav-line {
+  display: block;
+  height: 1px;
+  width: 2rem;
+  background: currentColor;
+  transition: width 0.2s;
+}
+
+.nav-link:hover .nav-line,
+.nav-link.active .nav-line {
+  width: 4rem;
+}
+
+/* Social icons */
+.social-link {
+  color: #475569;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-link:hover {
+  color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Certificate card */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.cert-card:hover {
+  background-color: rgba(148, 163, 184, 0.05);
+}
