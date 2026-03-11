@@ -264,6 +264,14 @@ export const translations = {
           label: 'Methodologies & Tools',
           tags: ['Microservices', 'CQRS', 'REST API', 'Scrum', 'Git', 'Jira'],
         },
+        {
+          label: 'IDEs & Dev Tools',
+          tags: ['JetBrains Rider', 'Visual Studio', 'Visual Studio Code', 'Cursor', 'SQL Server Management Studio'],
+        },
+        {
+          label: 'AI Tools',
+          tags: ['Claude', 'GitHub Copilot', 'OpenAI Codex', 'Cursor AI'],
+        },
       ],
     },
 
