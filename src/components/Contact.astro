@@ -200,6 +200,9 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
     }
     formData.delete('subject_custom');
 
+    // Remove Turnstile token — Web3Forms free plan doesn't support server-side verification
+    formData.delete('cf-turnstile-response');
+
     const data = Object.fromEntries(formData);
 
     try {
