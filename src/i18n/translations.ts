@@ -22,12 +22,13 @@ export const translations = {
       experience: 'Experience',
       certificates: 'Certificates',
       skills: 'Skills',
+      contact: 'Contact',
     },
 
     // Hero
     hero: {
       name: 'Kamil Jaworski',
-      title: 'Software Engineer',
+      title: '.NET Software Engineer',
       tagline:
         'I build reliable, scalable backend systems with .NET and cloud technologies.',
     },
@@ -273,6 +274,26 @@ export const translations = {
           tags: ['Claude', 'GitHub Copilot', 'OpenAI Codex', 'Cursor AI'],
         },
       ],
+    },
+
+    // Contact
+    contact: {
+      heading: 'Contact',
+      intro: 'Have a question or want to work together? Feel free to reach out.',
+      namePlaceholder: 'Your name',
+      nameLabel: 'Name',
+      emailPlaceholder: 'your@email.com',
+      emailLabel: 'Email',
+      subjectPlaceholder: 'Subject (optional)',
+      subjectLabel: 'Subject',
+      messagePlaceholder: 'Your message...',
+      messageLabel: 'Message',
+      submit: 'Send message',
+      sending: 'Sending...',
+      successTitle: 'Message sent!',
+      successBody: "Thanks for reaching out. I'll get back to you as soon as possible.",
+      errorTitle: 'Something went wrong.',
+      errorBody: 'Please try again or send an email directly to kontakt@kamiljaworski.pl.',
     },
 
     // Footer

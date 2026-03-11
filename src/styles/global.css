@@ -125,6 +125,54 @@ section[id] {
   color: var(--color-accent-light);
 }
 
+/* Form inputs */
+.form-input {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  width: 100%;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.form-input::placeholder {
+  color: var(--color-text-dim);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.1);
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-light);
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: rgba(129, 140, 248, 0.12);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Social icons */
 .social-link {
   color: var(--color-text-dim);

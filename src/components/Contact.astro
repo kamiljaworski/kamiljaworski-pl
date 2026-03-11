@@ -1,0 +1,188 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+
+const WEB3FORMS_KEY = '99aeebbe-082f-4b5d-bb46-639683d94169';
+// Use Cloudflare's public test key locally, real key in production
+const TURNSTILE_SITE_KEY = import.meta.env.DEV
+  ? '1x0000000000000000000000000000000AA'
+  : '0x4AAAAAACpK-ZQ_LIVQMtpq';
+---
+
+<section id="contact" aria-label={t.contact.heading} class="mb-10 scroll-mt-16 lg:mb-16 lg:scroll-mt-24">
+  <div
+    class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none"
+    style="background-color: rgba(13,17,23,0.85);"
+  >
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:hidden" style="color: var(--color-heading)">
+      {t.contact.heading}
+    </h2>
+  </div>
+
+  <p class="mb-6 text-sm leading-relaxed" style="color: var(--color-text-muted)">
+    {t.contact.intro}
+  </p>
+
+  <!-- Success message (hidden by default) -->
+  <div id="contact-success" class="hidden mb-6 rounded-md border p-4" style="border-color: rgba(129,140,248,0.3); background-color: rgba(129,140,248,0.06);">
+    <p class="text-sm font-semibold mb-1" style="color: var(--color-accent-light)">{t.contact.successTitle}</p>
+    <p class="text-sm" style="color: var(--color-text-muted)">{t.contact.successBody}</p>
+  </div>
+
+  <!-- Error message (hidden by default) -->
+  <div id="contact-error" class="hidden mb-6 rounded-md border p-4" style="border-color: rgba(248,113,113,0.3); background-color: rgba(248,113,113,0.06);">
+    <p class="text-sm font-semibold mb-1" style="color: #f87171">{t.contact.errorTitle}</p>
+    <p class="text-sm" style="color: var(--color-text-muted)">{t.contact.errorBody}</p>
+  </div>
+
+  <form id="contact-form" novalidate>
+    <!-- Web3Forms access key -->
+    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+    <!-- Redirect to same page (handled by JS, not used) -->
+    <input type="hidden" name="subject" value="New message from kamiljaworski.pl" />
+    <!-- Honeypot spam field -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+    <div class="flex flex-col gap-4">
+      <!-- Name -->
+      <div>
+        <label for="contact-name" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest" style="color: var(--color-text-dim)">
+          {t.contact.nameLabel} <span style="color: var(--color-accent)">*</span>
+        </label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          required
+          autocomplete="name"
+          placeholder={t.contact.namePlaceholder}
+          class="form-input"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="contact-email" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest" style="color: var(--color-text-dim)">
+          {t.contact.emailLabel} <span style="color: var(--color-accent)">*</span>
+        </label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder={t.contact.emailPlaceholder}
+          class="form-input"
+        />
+      </div>
+
+      <!-- Subject (optional) -->
+      <div>
+        <label for="contact-subject" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest" style="color: var(--color-text-dim)">
+          {t.contact.subjectLabel}
+        </label>
+        <input
+          id="contact-subject"
+          name="subject_custom"
+          type="text"
+          autocomplete="off"
+          placeholder={t.contact.subjectPlaceholder}
+          class="form-input"
+        />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="contact-message" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest" style="color: var(--color-text-dim)">
+          {t.contact.messageLabel} <span style="color: var(--color-accent)">*</span>
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          required
+          rows="5"
+          placeholder={t.contact.messagePlaceholder}
+          class="form-input"
+        ></textarea>
+      </div>
+
+      <!-- Cloudflare Turnstile -->
+      <div>
+        <div
+          class="cf-turnstile"
+          data-sitekey={TURNSTILE_SITE_KEY}
+          data-theme="dark"
+          data-size="normal"
+        ></div>
+      </div>
+
+      <!-- Submit -->
+      <div>
+        <button id="contact-submit" type="submit" class="btn-primary">
+          {t.contact.submit}
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- Turnstile script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script define:vars={{ submitLabel: t.contact.submit, sendingLabel: t.contact.sending }}>
+  const form = document.getElementById('contact-form');
+  const successEl = document.getElementById('contact-success');
+  const errorEl = document.getElementById('contact-error');
+  const submitBtn = document.getElementById('contact-submit');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Hide previous feedback
+    successEl.classList.add('hidden');
+    errorEl.classList.add('hidden');
+
+    // Disable button while submitting
+    submitBtn.disabled = true;
+    submitBtn.textContent = sendingLabel;
+
+    const formData = new FormData(form);
+
+    // Merge optional subject into the main subject field
+    const customSubject = formData.get('subject_custom');
+    if (customSubject) {
+      formData.set('subject', `[kamiljaworski.pl] ${customSubject}`);
+    }
+    formData.delete('subject_custom');
+
+    const data = Object.fromEntries(formData);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+
+      if (res.ok && json.success) {
+        successEl.classList.remove('hidden');
+        form.reset();
+        // Reset Turnstile widget
+        if (window.turnstile) window.turnstile.reset();
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch {
+      errorEl.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitLabel;
+    }
+  });
+</script>
