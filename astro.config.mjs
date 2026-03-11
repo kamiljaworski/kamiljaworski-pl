@@ -8,24 +8,7 @@ export default defineConfig({
   // Remove `base` once the custom domain kamiljaworski.pl is live in GitHub Pages settings.
   // It is only needed while the site is served from the /kamiljaworski-pl/ subdirectory.
   base: '/kamiljaworski-pl',
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'pl'],
-    routing: {
-      prefixDefaultLocale: true,
-    },
-  },
-  integrations: [
-    sitemap({
-      i18n: {
-        defaultLocale: 'en',
-        locales: {
-          en: 'en',
-          pl: 'pl',
-        },
-      },
-    }),
-  ],
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
