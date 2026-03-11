@@ -62,12 +62,12 @@ export const translations = {
           start: 'Oct 2022',
           end: 'Present',
           bullets: [
-            'Working on a large-scale travel booking platform used by thousands of agents across 6 countries, consisting of 100+ microservices in a hybrid on-premises and AWS environment.',
-            'Developed and maintained distributed microservices; refactored legacy on-prem services into cloud-native services deployed on AWS.',
-            'Implemented asynchronous messaging with MassTransit and AWS SQS/SNS.',
-            'Designed and built an event-driven email delivery platform: scheduling, templating, dispatching, tracking integrations, and analytics processing.',
-            'Built a centralised asset storage and retrieval service integrated with multiple distributed services.',
-            'Wrote comprehensive unit and integration tests including full integration testing with LocalStack and Docker.',
+            'Working on a large-scale travel booking platform used by thousands of agents across 6 countries, consisting of 100+ microservices in a hybrid on-premises and AWS environment',
+            'Developed and maintained distributed microservices; refactored legacy on-prem services into cloud-native services deployed on AWS',
+            'Implemented asynchronous messaging with MassTransit and AWS SQS/SNS',
+            'Designed and built an event-driven email delivery platform: scheduling, templating, dispatching, tracking integrations, and analytics processing',
+            'Built a centralised asset storage and retrieval service integrated with multiple distributed services',
+            'Wrote comprehensive unit and integration tests including full integration testing with LocalStack and Docker',
           ],
           tags: [
             '.NET 8',
@@ -97,9 +97,9 @@ export const translations = {
           start: 'Aug 2022',
           end: 'Sep 2022',
           bullets: [
-            'Joined to support the migration of on-premise services to Microsoft Azure for a financial company.',
-            'Developed Azure Functions to support new cloud-based features and implemented API endpoints using serverless architecture.',
-            'Supported feature flag mechanisms and adapted legacy components to cloud-native patterns.',
+            'Joined to support the migration of on-premise services to Microsoft Azure for a financial company',
+            'Developed Azure Functions to support new cloud-based features and implemented API endpoints using serverless architecture',
+            'Supported feature flag mechanisms and adapted legacy components to cloud-native patterns',
           ],
           tags: ['.NET', 'C#', 'Azure Functions', 'Microsoft Azure'],
         },
@@ -110,9 +110,9 @@ export const translations = {
           start: 'Oct 2021',
           end: 'Jul 2022',
           bullets: [
-            'Contributed to the development and maintenance of one of the largest Student Information Systems in Poland, serving approximately 40 universities.',
-            'Delivered new features across a WinForms desktop application, WebForms student portal, and WCF backend services.',
-            'Refactored legacy code, optimised database queries, and improved overall platform performance and stability.',
+            'Contributed to the development and maintenance of one of the largest Student Information Systems in Poland, serving approximately 40 universities',
+            'Delivered new features across a WinForms desktop application, WebForms student portal, and WCF backend services',
+            'Refactored legacy code, optimised database queries, and improved overall platform performance and stability',
           ],
           tags: [
             '.NET Framework',
@@ -132,10 +132,10 @@ export const translations = {
           start: 'Jan 2021',
           end: 'Sep 2021',
           bullets: [
-            'Promoted to Team Leader for a microservices-based e-commerce platform operating in 5 European markets, leading a Scrum team of 8 engineers.',
-            'Led and facilitated all Scrum ceremonies; managed and prioritised the product backlog with the Product Team.',
-            'Coordinated the successful production launch of the new platform, resolving critical issues and overseeing data migrations.',
-            'Continued active backend development on payment, order, and integration services.',
+            'Promoted to Team Leader for a microservices-based e-commerce platform operating in 5 European markets, leading a Scrum team of 8 engineers',
+            'Led and facilitated all Scrum ceremonies; managed and prioritised the product backlog with the Product Team',
+            'Coordinated the successful production launch of the new platform, resolving critical issues and overseeing data migrations',
+            'Continued active backend development on payment, order, and integration services',
           ],
           tags: [
             '.NET 5',
@@ -155,10 +155,10 @@ export const translations = {
           start: 'Jan 2020',
           end: 'Dec 2020',
           bullets: [
-            'Contributed to building a new microservices-based e-commerce platform from scratch to replace a legacy system, operating in 5 European markets.',
-            'Designed and implemented microservices for search, orders, and payments - including integrations with PayPal and PayU (BLIK one-click payments).',
-            'Implemented asynchronous communication between services using Azure Service Bus.',
-            'Supported cloud deployment and architecture on Microsoft Azure.',
+            'Contributed to building a new microservices-based e-commerce platform from scratch to replace a legacy system, operating in 5 European markets',
+            'Designed and implemented microservices for search, orders, and payments - including integrations with PayPal and PayU (BLIK one-click payments)',
+            'Implemented asynchronous communication between services using Azure Service Bus',
+            'Supported cloud deployment and architecture on Microsoft Azure',
           ],
           tags: [
             '.NET 5',
@@ -180,9 +180,9 @@ export const translations = {
           start: 'Jul 2019',
           end: 'Dec 2019',
           bullets: [
-            'Worked on a back-office system supporting an e-commerce platform selling software and hardware products.',
-            'Developed new features (orders, product catalogue, pricing, invoicing) and maintained existing modules.',
-            'Investigated and resolved production issues; implemented and consumed REST APIs for system integrations.',
+            'Worked on a back-office system supporting an e-commerce platform selling software and hardware products',
+            'Developed new features (orders, product catalogue, pricing, invoicing) and maintained existing modules',
+            'Investigated and resolved production issues; implemented and consumed REST APIs for system integrations',
           ],
           tags: [
             '.NET Framework 4.8',
