@@ -1,6 +1,6 @@
 import sharp from 'sharp';
 import pngToIco from 'png-to-ico';
-import { readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 
 // SVG source — dark bg + indigo KJ
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">

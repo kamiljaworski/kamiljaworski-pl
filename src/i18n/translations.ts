@@ -1,7 +1,5 @@
 export type Lang = 'en' | 'pl';
 
-export const defaultLang: Lang = 'en';
-
 export const translations = {
   en: {
     // Meta
@@ -48,6 +46,7 @@ export const translations = {
       heading: 'Experience',
       present: 'Present',
       linkedIn: 'View full profile on LinkedIn',
+      techUsed: 'Technologies used',
       entries: [
         {
           company: 'Software Mind',
@@ -349,6 +348,7 @@ export const translations = {
       heading: 'Doświadczenie',
       present: 'Obecnie',
       linkedIn: 'Zobacz pełny profil na LinkedIn',
+      techUsed: 'Użyte technologie',
       entries: [
         {
           company: 'Software Mind',
