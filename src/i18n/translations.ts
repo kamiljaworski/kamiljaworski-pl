@@ -33,13 +33,6 @@ export const translations = {
         'I build reliable, scalable backend systems with .NET and cloud technologies.',
     },
 
-    // Language toggle
-    lang: {
-      switchTo: 'PL',
-      switchToHref: '/pl/',
-      switchLabel: 'Switch to Polish',
-    },
-
     // About
     about: {
       heading: 'About',
@@ -54,6 +47,7 @@ export const translations = {
     experience: {
       heading: 'Experience',
       present: 'Present',
+      linkedIn: 'View full profile on LinkedIn',
       entries: [
         {
           company: 'Software Mind',
@@ -298,18 +292,20 @@ export const translations = {
       successBody: "Thanks for reaching out. I'll get back to you as soon as possible.",
       errorTitle: 'Something went wrong.',
       errorBody: 'Please try again or send an email directly to kontakt@kamiljaworski.pl.',
+      errorRequired: 'This field is required.',
+      errorEmail: 'Please enter a valid email address.',
     },
   },
 
   pl: {
     // Meta
     meta: {
-      title: 'Kamil Jaworski – .NET Software Engineer',
+      title: 'Kamil Jaworski - .NET Software Engineer',
       description:
         'Kamil Jaworski to inżynier oprogramowania specjalizujący się w .NET, C#, architekturze chmurowej i systemach rozproszonych. Częstochowa, Polska.',
       keywords:
         'programista .NET, inżynier oprogramowania .NET, C#, ASP.NET Core, ASP.NET MVC, Entity Framework, MassTransit, Angular, TypeScript, mikroserwisy, CQRS, architektura zdarzeniowa, REST API, AWS, Microsoft Azure, Docker, Terraform, SQL Server, MongoDB, Redis, Częstochowa, Polska, backend developer, architektura chmurowa, systemy rozproszone',
-      ogTitle: 'Kamil Jaworski – .NET Software Engineer',
+      ogTitle: 'Kamil Jaworski - .NET Software Engineer',
       ogDescription:
         'Specjalizuję się w .NET, architekturze chmurowej i systemach rozproszonych.',
     },
@@ -331,13 +327,6 @@ export const translations = {
         'Buduję skalowalne systemy backendowe z wykorzystaniem .NET i technologii chmurowych.',
     },
 
-    // Language toggle
-    lang: {
-      switchTo: 'EN',
-      switchToHref: '/en/',
-      switchLabel: 'Switch to English',
-    },
-
     // About
     about: {
       heading: 'O mnie',
@@ -352,6 +341,7 @@ export const translations = {
     experience: {
       heading: 'Doświadczenie',
       present: 'Obecnie',
+      linkedIn: 'Zobacz pełny profil na LinkedIn',
       entries: [
         {
           company: 'Software Mind',
@@ -595,6 +585,8 @@ export const translations = {
       successBody: 'Dziękuję za kontakt. Odpiszę najszybciej jak to możliwe.',
       errorTitle: 'Coś poszło nie tak.',
       errorBody: 'Spróbuj ponownie lub wyślij email bezpośrednio na kontakt@kamiljaworski.pl.',
+      errorRequired: 'To pole jest wymagane.',
+      errorEmail: 'Podaj prawidłowy adres email.',
     },
   },
 } as const;

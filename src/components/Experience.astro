@@ -64,9 +64,9 @@ const { t } = Astro.props;
       target="_blank"
       rel="noopener noreferrer"
       class="group inline-flex items-center gap-2 text-sm font-semibold accent-link"
-      aria-label="Full LinkedIn profile"
+      aria-label={t.experience.linkedIn}
     >
-      View full profile on LinkedIn
+      {t.experience.linkedIn}
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
         <path d="M7 17 17 7M7 7h10v10"/>
       </svg>

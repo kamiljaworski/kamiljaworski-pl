@@ -63,7 +63,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.namePlaceholder}
           class="form-input"
         />
-        <p id="error-name" class="hidden mt-1 text-xs" style="color: #f87171">This field is required.</p>
+        <p id="error-name" class="hidden mt-1 text-xs" style="color: #f87171">{t.contact.errorRequired}</p>
       </div>
 
       <!-- Email -->
@@ -80,7 +80,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.emailPlaceholder}
           class="form-input"
         />
-        <p id="error-email" class="hidden mt-1 text-xs" style="color: #f87171">Please enter a valid email address.</p>
+        <p id="error-email" class="hidden mt-1 text-xs" style="color: #f87171">{t.contact.errorEmail}</p>
       </div>
 
       <!-- Subject (optional) -->
@@ -111,7 +111,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.DEV
           placeholder={t.contact.messagePlaceholder}
           class="form-input"
         ></textarea>
-        <p id="error-message" class="hidden mt-1 text-xs" style="color: #f87171">This field is required.</p>
+        <p id="error-message" class="hidden mt-1 text-xs" style="color: #f87171">{t.contact.errorRequired}</p>
       </div>
 
       <!-- Cloudflare Turnstile -->
