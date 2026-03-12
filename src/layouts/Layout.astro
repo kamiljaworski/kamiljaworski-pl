@@ -105,28 +105,35 @@ const personSchema = {
       }
 
       // Active nav link on scroll
-      const sections = document.querySelectorAll('section[id]');
+      const sections = Array.from(document.querySelectorAll('section[id]'));
       const navLinks = document.querySelectorAll('.nav-link');
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navLinks.forEach((link) => {
-                const href = link.getAttribute('href');
-                if (href === '#' + entry.target.id) {
-                  link.classList.add('active');
-                } else {
-                  link.classList.remove('active');
-                }
-              });
-            }
-          });
-        },
-        { rootMargin: '-40% 0px -55% 0px' }
-      );
+      function updateActiveNav() {
+        // When the page is scrolled to the bottom, the last section wins regardless
+        // of where its top edge sits (short sections can't scroll high enough otherwise).
+        const atBottom =
+          window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
 
-      sections.forEach((section) => observer.observe(section));
+        // 150px is just above the scroll-margin-top (96px desktop / 64px mobile) so a
+        // section becomes active the moment its anchor snaps into position, while staying
+        // small enough that only one section qualifies at a time.
+        const triggerY = 150;
+
+        let active = sections[0];
+        for (const section of sections) {
+          if (atBottom || section.getBoundingClientRect().top <= triggerY) {
+            active = section;
+          }
+        }
+
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + active.id);
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      // requestAnimationFrame ensures the initial call runs after layout is complete
+      requestAnimationFrame(updateActiveNav);
     </script>
   </body>
 </html>
