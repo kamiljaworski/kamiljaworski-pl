@@ -9,11 +9,12 @@ interface Props {
 const { t, lang } = Astro.props;
 
 const navItems = [
-  { href: '#about',        label: t.nav.about,        num: '01' },
-  { href: '#experience',   label: t.nav.experience,   num: '02' },
-  { href: '#certificates', label: t.nav.certificates, num: '03' },
-  { href: '#skills',       label: t.nav.skills,       num: '04' },
-  { href: '#contact',      label: t.nav.contact,      num: '05' },
+  { href: '#about',        label: t.nav.about        },
+  { href: '#experience',   label: t.nav.experience   },
+  { href: '#certificates', label: t.nav.certificates },
+  ...(lang === 'pl' ? [{ href: '#projects', label: t.nav.projects }] : []),
+  { href: '#skills',       label: t.nav.skills       },
+  { href: '#contact',      label: t.nav.contact      },
 ];
 
 const langToggle = lang === 'pl'
@@ -36,10 +37,10 @@ const langToggle = lang === 'pl'
     <!-- Numbered nav — desktop only -->
     <nav class="mt-12 hidden lg:block" aria-label="On-page sections">
       <ul class="flex flex-col gap-3">
-        {navItems.map(({ href, label, num }) => (
+        {navItems.map(({ href, label }, i) => (
           <li>
             <a href={href} class="nav-link">
-              <span class="nav-num">{num}</span>
+              <span class="nav-num">{String(i + 1).padStart(2, '0')}</span>
               {label}
             </a>
           </li>

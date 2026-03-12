@@ -1,0 +1,129 @@
+---
+import type { PlTranslations } from '../i18n/translations';
+
+interface Props {
+  t: PlTranslations;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="projects" aria-label={t.projects.heading} class="mb-10 scroll-mt-16 lg:mb-16 lg:scroll-mt-24">
+  <div
+    class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none"
+    style="background-color: rgba(13,17,23,0.85);"
+  >
+    <h2 class="text-sm font-bold uppercase tracking-widest lg:hidden" style="color: var(--color-heading)">
+      {t.projects.heading}
+    </h2>
+  </div>
+
+  <p class="mb-6 text-sm leading-relaxed" style="color: var(--color-text-muted)">
+    {t.projects.intro}
+  </p>
+
+  <ol class="group/list flex flex-col gap-4">
+    {t.projects.items.map((project, i) => (
+      <li class="group">
+        <!-- Entire card is a button that opens the lightbox -->
+        <button
+          type="button"
+          class="exp-card rl-card group-hover/list:opacity-60 hover:!opacity-100 transition-opacity duration-200 w-full text-left cursor-pointer"
+          onclick={`document.getElementById('rl-dialog-${i}').showModal()`}
+          aria-label={`Otwórz szczegóły: ${project.title}`}
+        >
+          <!-- Screenshot -->
+          <div class="block w-full mb-4 overflow-hidden rounded-md" style="border: 1px solid var(--color-border)">
+            <img
+              src={project.image}
+              alt={`Zrzut ekranu strony ${project.title}`}
+              loading="lazy"
+              width="900"
+              height="506"
+              class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              style="aspect-ratio: 16/9; object-position: top;"
+            />
+          </div>
+
+          <!-- Title & subtitle -->
+          <h3 class="font-medium leading-snug" style="color: var(--color-heading)">
+            {project.title}
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1.5 align-middle" style="color: var(--color-accent);">
+              <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            </svg>
+          </h3>
+          <p class="mt-0.5 text-sm" style="color: var(--color-text-muted)">{project.subtitle}</p>
+
+          <!-- Tags -->
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologie">
+            {project.tags.map((tag) => (
+              <li><span class="tag">{tag}</span></li>
+            ))}
+          </ul>
+        </button>
+
+        <!-- Lightbox dialog -->
+        <dialog id={`rl-dialog-${i}`} class="rl-dialog">
+          <!-- Close button -->
+          <button
+            type="button"
+            class="rl-dialog-close"
+            aria-label="Zamknij"
+            onclick={`document.getElementById('rl-dialog-${i}').close()`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <!-- Screenshot -->
+          <div class="rl-dialog-image">
+            <img
+              src={project.image}
+              alt={`Zrzut ekranu strony ${project.title}`}
+              width="900"
+              height="506"
+              class="w-full object-cover rounded-md"
+              style="object-position: top;"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="rl-dialog-content">
+            <h3 class="text-lg font-semibold mb-1" style="color: var(--color-heading)">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 hover:underline"
+              >
+                {project.title}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent); flex-shrink: 0;">
+                  <path d="M7 17 17 7M7 7h10v10"/>
+                </svg>
+              </a>
+            </h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-muted)">{project.subtitle}</p>
+            <p class="text-sm leading-relaxed mb-5" style="color: var(--color-text-muted)">{project.description}</p>
+            <ul class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li><span class="tag">{tag}</span></li>
+              ))}
+            </ul>
+          </div>
+        </dialog>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<script>
+  // Close dialog when clicking the backdrop
+  document.querySelectorAll('.rl-dialog').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) (dialog as HTMLDialogElement).close();
+    });
+  });
+
+  // Close dialog on Escape key is handled natively by the browser
+</script>

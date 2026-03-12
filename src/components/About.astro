@@ -6,6 +6,12 @@ interface Props {
 }
 
 const { t } = Astro.props;
+
+// Prevent single-letter Polish prepositions from being left at line ends (sierotki).
+// Replaces the space after: i, a, o, u, w, z, I, A, O, U, W, Z with a non-breaking space.
+function noSierotki(text: string): string {
+  return text.replace(/(\s)([iIaAoOuUwWzZ])\s+/g, '$1$2\u00A0');
+}
 ---
 
 <section id="about" aria-label={t.about.heading} class="mb-10 scroll-mt-16 lg:mb-16 lg:scroll-mt-24">
@@ -17,7 +23,7 @@ const { t } = Astro.props;
 
   <div class="flex flex-col gap-4">
     {t.about.body.map((paragraph) => (
-      <p class="leading-relaxed" style="color: var(--color-text-muted)">{paragraph}</p>
+      <p class="leading-relaxed" style="color: var(--color-text-muted); text-align: justify; text-wrap: pretty;" set:html={noSierotki(paragraph)} />
     ))}
   </div>
 </section>

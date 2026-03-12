@@ -10,6 +10,7 @@ Built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcs
 - Polish (default) and English versions with browser language detection
 - Fully static - zero client-side JS framework
 - SEO optimised: meta tags, Open Graph, JSON-LD structured data, sitemap, hreflang
+- PL-only "Realizacje" section showcasing website projects with a lightbox preview
 - Contact form (Web3Forms + Cloudflare Turnstile)
 - Cursor spotlight effect
 - Responsive (mobile + desktop split layout)

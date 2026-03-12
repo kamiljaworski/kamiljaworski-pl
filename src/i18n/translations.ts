@@ -20,6 +20,7 @@ export const translations = {
       experience: 'Experience',
       certificates: 'Certificates',
       skills: 'Skills',
+      projects: 'Projects',
       contact: 'Contact',
     },
 
@@ -232,6 +233,7 @@ export const translations = {
           label: 'Frameworks & Libraries',
           tags: [
             '.NET 8',
+            '.NET Framework',
             'ASP.NET Core',
             'ASP.NET MVC',
             'Entity Framework',
@@ -240,6 +242,10 @@ export const translations = {
             'Moq',
             'NSubstitute',
             'Angular',
+            'Astro',
+            'Tailwind CSS',
+            'WordPress',
+            'WooCommerce',
           ],
         },
         {
@@ -295,6 +301,20 @@ export const translations = {
       errorEmail: 'Please enter a valid email address.',
     },
 
+    // Projects stub — section is PL-only, EN stub ensures Translations type includes the key
+    projects: {
+      heading: 'Projects',
+      intro: '',
+      items: [] as Array<{
+        title: string;
+        subtitle: string;
+        url: string;
+        image: string;
+        description: string;
+        tags: string[];
+      }>,
+    },
+
     // 404
     notFound: {
       title: 'Page not found',
@@ -310,7 +330,7 @@ export const translations = {
       description:
         'Kamil Jaworski to inżynier oprogramowania specjalizujący się w .NET, C#, architekturze chmurowej i systemach rozproszonych. Częstochowa, Polska.',
       keywords:
-        'programista .NET, inżynier oprogramowania .NET, C#, ASP.NET Core, ASP.NET MVC, Entity Framework, MassTransit, Angular, TypeScript, mikroserwisy, CQRS, architektura zdarzeniowa, REST API, AWS, Microsoft Azure, Docker, Terraform, SQL Server, MongoDB, Redis, Częstochowa, Polska, backend developer, architektura chmurowa, systemy rozproszone',
+        'programista .NET, inżynier oprogramowania .NET, C#, ASP.NET Core, ASP.NET MVC, Entity Framework, MassTransit, Angular, TypeScript, mikroserwisy, CQRS, architektura zdarzeniowa, REST API, AWS, Microsoft Azure, Docker, Terraform, SQL Server, MongoDB, Redis, Częstochowa, Polska, backend developer, architektura chmurowa, systemy rozproszone, tworzenie stron internetowych, projektowanie stron internetowych, strona internetowa dla firmy, strona wizytówka, sklep internetowy, WordPress, WooCommerce, wykonanie strony internetowej, webmaster, tworzenie sklepów internetowych, strona www dla firmy',
       ogTitle: 'Kamil Jaworski - .NET Software Engineer',
       ogDescription:
         'Specjalizuję się w .NET, architekturze chmurowej i systemach rozproszonych.',
@@ -322,6 +342,7 @@ export const translations = {
       experience: 'Doświadczenie',
       certificates: 'Certyfikaty',
       skills: 'Umiejętności',
+      projects: 'Realizacje',
       contact: 'Kontakt',
     },
 
@@ -338,7 +359,8 @@ export const translations = {
       heading: 'O mnie',
       body: [
         'Jestem inżynierem oprogramowania z 7-letnim doświadczeniem zawodowym, specjalizującym się w programowaniu backendowym z użyciem .NET i C#. Pasjonuje mnie projektowanie i budowanie rozproszonych systemów chmurowych - od mikroserwisów po architektury sterowane zdarzeniami. Mam również praktyczne doświadczenie w tworzeniu frontendu w Angular i TypeScript.',
-        'W swojej karierze pracowałem nad platformami na dużą skalę w branży turystycznej i e-commerce, uczestniczyłem w migracjach do chmury (Azure i AWS) oraz przez pewien czas prowadziłem 8-osobowy zespół, będąc jednocześnie aktywnym developerem. Zależy mi na jakości kodu, testowalności i budowaniu systemów, które są zarówno niezawodne, jak i łatwe w utrzymaniu.',
+        'W swojej karierze pracowałem nad dużymi platformami w branży turystycznej i e-commerce, uczestniczyłem w migracjach do chmury (Azure i AWS) oraz przez pewien czas prowadziłem 8‑osobowy zespół, będąc jednocześnie aktywnym developerem. Zależy mi na jakości kodu, testowalności i budowaniu systemów, które są zarówno niezawodne, jak i łatwe w utrzymaniu.',
+        'Tworzę również strony internetowe dla firm - od prostych wizytówek po sklepy internetowe. Jeśli szukasz kogoś, kto zrobi dla Ciebie stronę, <a href="#projects" class="accent-link">sprawdź moje realizacje</a>.',
         'Poza pracą zazwyczaj eksploruję nowe technologie, rozwijam projekty poboczne lub odpoczywam na świeżym powietrzu.',
       ],
     },
@@ -533,6 +555,7 @@ export const translations = {
           label: 'Frameworki i biblioteki',
           tags: [
             '.NET 8',
+            '.NET Framework',
             'ASP.NET Core',
             'ASP.NET MVC',
             'Entity Framework',
@@ -541,6 +564,10 @@ export const translations = {
             'Moq',
             'NSubstitute',
             'Angular',
+            'Astro',
+            'Tailwind CSS',
+            'WordPress',
+            'WooCommerce',
           ],
         },
         {
@@ -570,6 +597,30 @@ export const translations = {
         {
           label: 'Narzędzia AI',
           tags: ['Claude', 'GitHub Copilot', 'OpenAI Codex', 'Cursor AI'],
+        },
+      ],
+    },
+
+    // Projects / Realizacje (PL only)
+    projects: {
+      heading: 'Realizacje',
+      intro: 'Oprócz pracy w .NET, tworzę również strony internetowe dla firm. Poniżej kilka ostatnich realizacji.',
+      items: [
+        {
+          title: 'Rekuwent-Hydrogaz',
+          subtitle: 'Sklep internetowy - pompy ciepła i rekuperatory',
+          url: 'https://rekuwent-hydrogaz.pl/',
+          image: '/projects/rekuwent-hydrogaz.png',
+          description: 'Projekt graficzny i wykonanie strony internetowej ze sklepem online dla firmy zajmującej się sprzedażą pomp ciepła, rekuperatorów oraz kotłów kondensacyjnych. Prace obejmowały instalację i konfigurację WooCommerce, setup produktów i kategorii, proces zakupowy, formularz kontaktowy oraz optymalizację SEO.',
+          tags: ['WordPress', 'WooCommerce', 'CSS', 'JavaScript', 'SEO'],
+        },
+        {
+          title: 'PD-INSTAL',
+          subtitle: 'Strona wizytówka dla firmy elektrycznej',
+          url: 'https://pd-instal.com/',
+          image: '/projects/pd-instal.png',
+          description: 'Zaprojektowanie i wykonanie responsywnej strony wizytówki dla firmy elektrycznej. Projekt obejmował stworzenie spójnego layoutu zgodnego z identyfikacją wizualną firmy, wykonanie podstron prezentujących ofertę i realizacje (blog WordPress), formularza kontaktowego, integrację ocen Google na stronie głównej oraz optymalizację SEO.',
+          tags: ['WordPress', 'CSS', 'JavaScript', 'SEO'],
         },
       ],
     },
@@ -606,3 +657,5 @@ export const translations = {
 } as const;
 
 export type Translations = (typeof translations)[Lang];
+// PL-specific translations (for PL-only sections like projects/realizacje)
+export type PlTranslations = (typeof translations)['pl'];
