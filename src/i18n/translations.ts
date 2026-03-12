@@ -295,6 +295,13 @@ export const translations = {
       errorRequired: 'This field is required.',
       errorEmail: 'Please enter a valid email address.',
     },
+
+    // 404
+    notFound: {
+      title: 'Page not found',
+      subtitle: 'The page you are looking for does not exist.',
+      goHome: 'Go home',
+    },
   },
 
   pl: {
@@ -587,6 +594,13 @@ export const translations = {
       errorBody: 'Spróbuj ponownie lub wyślij email bezpośrednio na kontakt@kamiljaworski.pl.',
       errorRequired: 'To pole jest wymagane.',
       errorEmail: 'Podaj prawidłowy adres email.',
+    },
+
+    // 404
+    notFound: {
+      title: 'Nie znaleziono strony',
+      subtitle: 'Strona, której szukasz, nie istnieje.',
+      goHome: 'Wróć na stronę główną',
     },
   },
 } as const;
