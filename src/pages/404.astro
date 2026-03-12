@@ -21,11 +21,12 @@ import '../styles/global.css';
   <body class="min-h-screen antialiased flex items-center justify-center px-6">
     <div class="text-center">
       <p class="text-sm font-bold uppercase tracking-widest mb-4" style="color: var(--color-accent)">404</p>
-      <h1 class="text-3xl font-bold mb-3" style="color: var(--color-heading)">Page not found</h1>
-      <p class="text-sm mb-8" style="color: var(--color-text-muted)">
+      <h1 id="title" class="text-3xl font-bold mb-3" style="color: var(--color-heading)">Page not found</h1>
+      <p id="subtitle" class="text-sm mb-8" style="color: var(--color-text-muted)">
         The page you are looking for does not exist.
       </p>
       <a
+        id="home-link"
         href="/"
         class="inline-flex items-center gap-2 text-sm font-semibold"
         style="color: var(--color-accent-light)"
@@ -36,5 +37,22 @@ import '../styles/global.css';
         Go home
       </a>
     </div>
+
+    <script is:inline>
+      (function () {
+        var lang = localStorage.getItem('preferred-lang');
+        if (!lang) {
+          var browserLang = navigator.language || navigator.userLanguage || '';
+          lang = browserLang.toLowerCase().startsWith('pl') ? 'pl' : 'en';
+        }
+        if (lang === 'pl') {
+          document.documentElement.lang = 'pl';
+          document.getElementById('title').textContent = 'Nie znaleziono strony';
+          document.getElementById('subtitle').textContent = 'Strona, której szukasz, nie istnieje.';
+          document.getElementById('home-link').innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Wróć na stronę główną';
+        }
+      })();
+    </script>
   </body>
 </html>
