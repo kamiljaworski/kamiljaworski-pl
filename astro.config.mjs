@@ -5,7 +5,14 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://kamiljaworski.pl',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'pl',
+        locales: { pl: 'pl', en: 'en' },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

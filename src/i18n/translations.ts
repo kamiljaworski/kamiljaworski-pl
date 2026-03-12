@@ -8,9 +8,9 @@ export const translations = {
     meta: {
       title: 'Kamil Jaworski - .NET Software Engineer',
       description:
-        'Kamil Jaworski is a Software Engineer specialising in .NET, C#, cloud architecture, and distributed systems. Based in Częstochowa, Poland.',
+        'Kamil Jaworski is a Software Engineer specialising in .NET, C#, cloud architecture and distributed systems. Based in Częstochowa, Poland.',
       keywords:
-        '.NET developer, software engineer, C#, ASP.NET, Azure, AWS, Częstochowa, Poland, backend developer',
+        '.NET developer, .NET software engineer, C#, ASP.NET Core, ASP.NET MVC, Entity Framework, MassTransit, xUnit, Angular, TypeScript, JavaScript, microservices, CQRS, event-driven architecture, REST API, AWS, Microsoft Azure, Docker, Terraform, SQL Server, MongoDB, Redis, Częstochowa, Poland, backend developer, cloud architecture, distributed systems',
       ogTitle: 'Kamil Jaworski - .NET Software Engineer',
       ogDescription:
         'Software Engineer specialising in .NET, cloud architecture and distributed systems.',
@@ -44,9 +44,9 @@ export const translations = {
     about: {
       heading: 'About',
       body: [
-        "I'm a Software Engineer with 7 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems - from microservices to event-driven architectures.",
-        'Over the course of my career I have worked on large-scale platforms in the travel and e-commerce industries, contributed to cloud migrations on both Azure and AWS, and at one point led a team of 8 engineers while remaining hands-on as a developer. I care deeply about code quality, testability, and building systems that are both reliable and maintainable.',
-        "When I'm not at the keyboard, I'm usually exploring new technologies, tinkering with side projects, or enjoying the outdoors.",
+        "I'm a Software Engineer with 7 years of professional experience, specialising in backend development with .NET and C#. I enjoy designing and building distributed, cloud-native systems - from microservices to event-driven architectures. On the frontend side I have practical experience with Angular and TypeScript.",
+        'Over the course of my career I have worked on large-scale platforms in the travel and e-commerce industries, contributed to cloud migrations on both Azure and AWS and at one point led a team of 8 engineers while remaining hands-on as a developer. I care deeply about code quality, testability and building systems that are both reliable and maintainable.',
+        "When I'm not at the keyboard, I'm usually exploring new technologies, tinkering with side projects or enjoying the outdoors.",
       ],
     },
 
@@ -65,7 +65,7 @@ export const translations = {
             'Working on a large-scale travel booking platform used by thousands of agents across 6 countries, consisting of 100+ microservices in a hybrid on-premises and AWS environment',
             'Developed and maintained distributed microservices; refactored legacy on-prem services into cloud-native services deployed on AWS',
             'Implemented asynchronous messaging with MassTransit and AWS SQS/SNS',
-            'Designed and built an event-driven email delivery platform: scheduling, templating, dispatching, tracking integrations, and analytics processing',
+            'Designed and built an event-driven email delivery platform: scheduling, templating, dispatching, tracking integrations and analytics processing',
             'Built a centralised asset storage and retrieval service integrated with multiple distributed services',
             'Wrote comprehensive unit and integration tests including full integration testing with LocalStack and Docker',
           ],
@@ -110,9 +110,9 @@ export const translations = {
           start: 'Oct 2021',
           end: 'Jul 2022',
           bullets: [
-            'Contributed to the development and maintenance of one of the largest Student Information Systems in Poland, serving approximately 40 universities',
-            'Delivered new features across a WinForms desktop application, WebForms student portal, and WCF backend services',
-            'Refactored legacy code, optimised database queries, and improved overall platform performance and stability',
+            'Contributed to the development and maintenance of one of the largest Student Information Systems in Poland serving approximately 40 universities',
+            'Delivered new features across a WinForms desktop application, WebForms student portal and WCF backend services',
+            'Refactored legacy code, optimised database queries and improved overall platform performance and stability',
           ],
           tags: [
             '.NET Framework',
@@ -135,7 +135,7 @@ export const translations = {
             'Promoted to Team Leader for a microservices-based e-commerce platform operating in 5 European markets, leading a Scrum team of 8 engineers',
             'Led and facilitated all Scrum ceremonies; managed and prioritised the product backlog with the Product Team',
             'Coordinated the successful production launch of the new platform, resolving critical issues and overseeing data migrations',
-            'Continued active backend development on payment, order, and integration services',
+            'Continued active backend development on payment, order and integration services',
           ],
           tags: [
             '.NET 5',
@@ -155,7 +155,7 @@ export const translations = {
           start: 'Jan 2020',
           end: 'Dec 2020',
           bullets: [
-            'Contributed to building a new microservices-based e-commerce platform from scratch to replace a legacy system, operating in 5 European markets',
+            'Contributed to building a new microservices-based e-commerce platform from scratch to replace a legacy system operating in 5 European markets',
             'Designed and implemented microservices for search, orders, and payments - including integrations with PayPal and PayU (BLIK one-click payments)',
             'Implemented asynchronous communication between services using Azure Service Bus',
             'Supported cloud deployment and architecture on Microsoft Azure',
@@ -233,16 +233,19 @@ export const translations = {
       groups: [
         {
           label: 'Languages',
-          tags: ['C#', 'TypeScript', 'JavaScript', 'SQL'],
+          tags: ['C#', 'TypeScript', 'JavaScript', 'SQL', 'jQuery'],
         },
         {
           label: 'Frameworks & Libraries',
           tags: [
             '.NET 8',
             'ASP.NET Core',
+            'ASP.NET MVC',
             'Entity Framework',
             'MassTransit',
             'xUnit',
+            'Moq',
+            'NSubstitute',
             'Angular',
           ],
         },
@@ -255,6 +258,7 @@ export const translations = {
             'Terraform',
             'Azure Service Bus',
             'AWS SQS/SNS',
+            'LocalStack',
           ],
         },
         {
@@ -263,7 +267,7 @@ export const translations = {
         },
         {
           label: 'Methodologies & Tools',
-          tags: ['Microservices', 'CQRS', 'REST API', 'Scrum', 'Git', 'Jira'],
+          tags: ['Microservices', 'CQRS', 'Event-driven architecture', 'REST API', 'Scrum', 'Git', 'Jira'],
         },
         {
           label: 'IDEs & Dev Tools',
@@ -295,24 +299,19 @@ export const translations = {
       errorTitle: 'Something went wrong.',
       errorBody: 'Please try again or send an email directly to kontakt@kamiljaworski.pl.',
     },
-
-    // Footer
-    footer: {
-      builtWith: 'Built with Astro & Tailwind CSS',
-    },
   },
 
   pl: {
     // Meta
     meta: {
-      title: 'Kamil Jaworski – Inżynier Oprogramowania .NET',
+      title: 'Kamil Jaworski – .NET Software Engineer',
       description:
         'Kamil Jaworski to inżynier oprogramowania specjalizujący się w .NET, C#, architekturze chmurowej i systemach rozproszonych. Częstochowa, Polska.',
       keywords:
-        'programista .NET, inżynier oprogramowania, C#, ASP.NET, Azure, AWS, Częstochowa, Polska, backend developer',
-      ogTitle: 'Kamil Jaworski – Inżynier Oprogramowania .NET',
+        'programista .NET, inżynier oprogramowania .NET, C#, ASP.NET Core, ASP.NET MVC, Entity Framework, MassTransit, Angular, TypeScript, mikroserwisy, CQRS, architektura zdarzeniowa, REST API, AWS, Microsoft Azure, Docker, Terraform, SQL Server, MongoDB, Redis, Częstochowa, Polska, backend developer, architektura chmurowa, systemy rozproszone',
+      ogTitle: 'Kamil Jaworski – .NET Software Engineer',
       ogDescription:
-        'Inżynier oprogramowania specjalizujący się w .NET, architekturze chmurowej i systemach rozproszonych.',
+        'Specjalizuję się w .NET, architekturze chmurowej i systemach rozproszonych.',
     },
 
     // Nav
@@ -321,14 +320,15 @@ export const translations = {
       experience: 'Doświadczenie',
       certificates: 'Certyfikaty',
       skills: 'Umiejętności',
+      contact: 'Kontakt',
     },
 
     // Hero
     hero: {
       name: 'Kamil Jaworski',
-      title: 'Inżynier Oprogramowania',
+      title: '.NET Software Engineer',
       tagline:
-        'Tworzę niezawodne i skalowalne systemy backendowe z wykorzystaniem .NET i technologii chmurowych.',
+        'Buduję skalowalne systemy backendowe z wykorzystaniem .NET i technologii chmurowych.',
     },
 
     // Language toggle
@@ -342,9 +342,9 @@ export const translations = {
     about: {
       heading: 'O mnie',
       body: [
-        'Jestem inżynierem oprogramowania z ponad 5-letnim doświadczeniem zawodowym, specjalizującym się w programowaniu backendowym z użyciem .NET i C#. Pasjonuje mnie projektowanie i budowanie rozproszonych, cloud-natywnych systemów — od mikroserwisów po architektury sterowane zdarzeniami.',
-        'W swojej karierze pracowałem nad platformami na dużą skalę w branży turystycznej i e-commerce, uczestniczyłem w migracjach do chmury (Azure i AWS) oraz prowadziłem zespoły inżynierskie przez wdrożenia produkcyjne. Zależy mi na jakości kodu, testowalności i budowaniu systemów, które są zarówno niezawodne, jak i łatwe w utrzymaniu.',
-        'Poza pracą zazwyczaj eksplorują nowe technologie, rozwijam projekty poboczne lub odpoczywam na świeżym powietrzu.',
+        'Jestem inżynierem oprogramowania z 7-letnim doświadczeniem zawodowym, specjalizującym się w programowaniu backendowym z użyciem .NET i C#. Pasjonuje mnie projektowanie i budowanie rozproszonych systemów chmurowych - od mikroserwisów po architektury sterowane zdarzeniami. Mam również praktyczne doświadczenie w tworzeniu frontendu w Angular i TypeScript.',
+        'W swojej karierze pracowałem nad platformami na dużą skalę w branży turystycznej i e-commerce, uczestniczyłem w migracjach do chmury (Azure i AWS) oraz przez pewien czas prowadziłem 8-osobowy zespół, będąc jednocześnie aktywnym developerem. Zależy mi na jakości kodu, testowalności i budowaniu systemów, które są zarówno niezawodne, jak i łatwe w utrzymaniu.',
+        'Poza pracą zazwyczaj eksploruję nowe technologie, rozwijam projekty poboczne lub odpoczywam na świeżym powietrzu.',
       ],
     },
 
@@ -360,12 +360,12 @@ export const translations = {
           start: 'Paź 2022',
           end: 'Obecnie',
           bullets: [
-            'Praca nad platformą rezerwacji podróży na dużą skalę, używaną przez tysiące agentów w 6 krajach, składającą się z ponad 100 mikroserwisów w środowisku hybrydowym (on-premises i AWS).',
-            'Rozwijanie i utrzymanie rozproszonych mikroserwisów; refaktoryzacja serwisów legacy do cloud-natywnych wdrożonych na AWS.',
-            'Implementacja asynchronicznej komunikacji z MassTransit i AWS SQS/SNS.',
-            'Zaprojektowanie i zbudowanie platformy do dostarczania e-maili sterowanej zdarzeniami: planowanie, szablonowanie, wysyłka, integracje śledzenia i przetwarzanie analityk.',
-            'Zbudowanie centralnego serwisu do przechowywania i pobierania zasobów zintegrowanego z wieloma usługami.',
-            'Pisanie kompleksowych testów jednostkowych i integracyjnych, w tym pełnych testów integracyjnych z LocalStack i Docker.',
+            'Praca nad platformą z branży turystycznej używaną przez tysiące agentów w 6 krajach, składającą się z ponad 100 mikroserwisów w środowisku hybrydowym (on-premises i AWS)',
+            'Rozwijanie i utrzymanie rozproszonych mikroserwisów; refaktoryzacja serwisów legacy do serwisów chmurowych wdrożonych na AWS',
+            'Implementacja asynchronicznej komunikacji z MassTransit i AWS SQS/SNS',
+            'Zaprojektowanie i zbudowanie platformy do dostarczania e-maili sterowanej zdarzeniami: planowanie wysyłki, tworzenie szablonów, wysyłka, integracje z systemami śledzenia i analityka',
+            'Zbudowanie centralnego serwisu do przechowywania i pobierania zasobów zintegrowanego z wieloma wewnętrznymi usługami',
+            'Pisanie kompleksowych testów jednostkowych i integracyjnych, w tym pełnych testów integracyjnych z LocalStack i Docker',
           ],
           tags: [
             '.NET 8',
@@ -395,9 +395,9 @@ export const translations = {
           start: 'Sie 2022',
           end: 'Wrz 2022',
           bullets: [
-            'Wsparcie migracji serwisów on-premise do Microsoft Azure dla firmy z sektora finansowego.',
-            'Tworzenie Azure Functions wspierających nowe funkcje cloudowe oraz implementacja endpointów API z użyciem architektury bezserwerowej.',
-            'Wsparcie mechanizmów feature flag i adaptacja komponentów legacy do wzorców cloud-natywnych.',
+            'Wsparcie migracji serwisów on-premise do Microsoft Azure dla firmy z sektora finansowego',
+            'Tworzenie Azure Functions wspierających nowe funkcje chmurowe oraz implementacja endpointów API z użyciem architektury serverless',
+            'Wsparcie mechanizmów feature flag i adaptacja komponentów legacy do wzorców chmurowych',
           ],
           tags: ['.NET', 'C#', 'Azure Functions', 'Microsoft Azure'],
         },
@@ -408,9 +408,9 @@ export const translations = {
           start: 'Paź 2021',
           end: 'Lip 2022',
           bullets: [
-            'Udział w rozwoju i utrzymaniu jednego z największych systemów obsługi studentów w Polsce, obsługującego ok. 40 uczelni.',
-            'Dostarczanie nowych funkcjonalności w aplikacji desktopowej WinForms, portalu studenckim WebForms oraz serwisach backendowych WCF.',
-            'Refaktoryzacja kodu legacy, optymalizacja zapytań do baz danych i poprawa wydajności platformy.',
+            'Udział w rozwoju i utrzymaniu jednego z największych systemów dziekanatowych w Polsce, obsługującego ok. 40 uczelni',
+            'Dostarczanie nowych funkcjonalności w aplikacji desktopowej WinForms, portalu studenckim WebForms oraz serwisach backendowych WCF',
+            'Refaktoryzacja kodu legacy, optymalizacja zapytań do baz danych i poprawa wydajności platformy',
           ],
           tags: [
             '.NET Framework',
@@ -430,10 +430,10 @@ export const translations = {
           start: 'Sty 2021',
           end: 'Wrz 2021',
           bullets: [
-            'Awans na Team Leadera platformy e-commerce opartej na mikroserwisach, działającej na 5 rynkach europejskich; kierowanie zespołem Scrum złożonym z 8 inżynierów.',
-            'Prowadzenie ceremonii Scrum; zarządzanie i priorytetyzacja backlogu produktu we współpracy z zespołem produktowym.',
-            'Koordynacja udanego wdrożenia produkcyjnego platformy — rozwiązywanie krytycznych problemów i nadzorowanie migracji danych.',
-            'Aktywny udział w rozwoju backendowym serwisów płatności, zamówień i integracji.',
+            'Team Leader zespołu odpowiedzialnego za platformę e-commerce opartą na mikroserwisach, działającą na 5 rynkach europejskich; kierowanie 8-osobowym zespołem przy jednoczesnym aktywnym udziale w developmencie',
+            'Prowadzenie ceremonii Scrum; zarządzanie i priorytetyzacja backlogu produktu we współpracy z zespołem produktowym',
+            'Koordynacja udanego wdrożenia produkcyjnego platformy - rozwiązywanie krytycznych problemów i nadzorowanie migracji danych',
+            'Aktywny udział w rozwoju backendowym serwisów płatności, zamówień i integracji',
           ],
           tags: [
             '.NET 5',
@@ -453,9 +453,9 @@ export const translations = {
           start: 'Sty 2020',
           end: 'Gru 2020',
           bullets: [
-            'Udział w budowaniu od podstaw platformy e-commerce opartej na mikroserwisach, działającej na 5 rynkach europejskich.',
-            'Zaprojektowanie i implementacja mikroserwisów do wyszukiwania, zamówień i płatności — w tym integracje z PayPal i PayU (płatności BLIK one-click).',
-            'Implementacja asynchronicznej komunikacji między serwisami z Azure Service Bus.',
+            'Udział w budowaniu od podstaw platformy e-commerce opartej na mikroserwisach, działającej na 5 rynkach europejskich',
+            'Zaprojektowanie i implementacja mikroserwisów do wyszukiwania, zamówień i płatności - w tym integracje z PayPal i PayU (płatności BLIK one-click)',
+            'Implementacja asynchronicznej komunikacji między serwisami z Azure Service Bus',
           ],
           tags: [
             '.NET 5',
@@ -477,9 +477,9 @@ export const translations = {
           start: 'Lip 2019',
           end: 'Gru 2019',
           bullets: [
-            'Praca nad systemem back-office obsługującym platformę e-commerce sprzedającą oprogramowanie i sprzęt.',
-            'Tworzenie nowych funkcjonalności (zamówienia, katalog produktów, cennik, fakturowanie) i utrzymanie istniejących modułów.',
-            'Analiza i rozwiązywanie problemów produkcyjnych; implementacja i konsumpcja REST API.',
+            'Praca nad systemem back-office obsługującym platformę e-commerce sprzedającą oprogramowanie i sprzęt',
+            'Tworzenie nowych funkcjonalności (zamówienia, katalog produktów, cennik, fakturowanie) i utrzymanie istniejących modułów',
+            'Analiza i rozwiązywanie problemów produkcyjnych; implementacja i konsumpcja REST API',
           ],
           tags: [
             '.NET Framework 4.8',
@@ -530,16 +530,19 @@ export const translations = {
       groups: [
         {
           label: 'Języki',
-          tags: ['C#', 'TypeScript', 'JavaScript', 'SQL'],
+          tags: ['C#', 'TypeScript', 'JavaScript', 'SQL', 'jQuery'],
         },
         {
           label: 'Frameworki i biblioteki',
           tags: [
             '.NET 8',
             'ASP.NET Core',
+            'ASP.NET MVC',
             'Entity Framework',
             'MassTransit',
             'xUnit',
+            'Moq',
+            'NSubstitute',
             'Angular',
           ],
         },
@@ -552,6 +555,7 @@ export const translations = {
             'Terraform',
             'Azure Service Bus',
             'AWS SQS/SNS',
+            'LocalStack',
           ],
         },
         {
@@ -560,14 +564,37 @@ export const translations = {
         },
         {
           label: 'Metodyki i narzędzia',
-          tags: ['Mikroserwisy', 'CQRS', 'REST API', 'Scrum', 'Git', 'Jira'],
+          tags: ['Mikroserwisy', 'CQRS', 'Architektura zdarzeniowa', 'REST API', 'Scrum', 'Git', 'Jira'],
+        },
+        {
+          label: 'IDE i narzędzia deweloperskie',
+          tags: ['JetBrains Rider', 'Visual Studio', 'Visual Studio Code', 'Cursor', 'SQL Server Management Studio'],
+        },
+        {
+          label: 'Narzędzia AI',
+          tags: ['Claude', 'GitHub Copilot', 'OpenAI Codex', 'Cursor AI'],
         },
       ],
     },
 
-    // Footer
-    footer: {
-      builtWith: 'Zbudowane z Astro & Tailwind CSS',
+    // Contact
+    contact: {
+      heading: 'Kontakt',
+      intro: 'Masz pytanie lub chcesz porozmawiać o współpracy? Napisz do mnie.',
+      namePlaceholder: 'Twoje imię',
+      nameLabel: 'Imię i nazwisko',
+      emailPlaceholder: 'twoj@email.com',
+      emailLabel: 'Email',
+      subjectPlaceholder: 'Temat (opcjonalnie)',
+      subjectLabel: 'Temat',
+      messagePlaceholder: 'Twoja wiadomość...',
+      messageLabel: 'Wiadomość',
+      submit: 'Wyślij wiadomość',
+      sending: 'Wysyłanie...',
+      successTitle: 'Wiadomość wysłana!',
+      successBody: 'Dziękuję za kontakt. Odpiszę najszybciej jak to możliwe.',
+      errorTitle: 'Coś poszło nie tak.',
+      errorBody: 'Spróbuj ponownie lub wyślij email bezpośrednio na kontakt@kamiljaworski.pl.',
     },
   },
 } as const;

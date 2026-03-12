@@ -1,11 +1,12 @@
 ---
-import type { Translations } from '../i18n/translations';
+import type { Translations, Lang } from '../i18n/translations';
 
 interface Props {
   t: Translations;
+  lang: Lang;
 }
 
-const { t } = Astro.props;
+const { t, lang } = Astro.props;
 
 const navItems = [
   { href: '#about',        label: t.nav.about,        num: '01' },
@@ -14,6 +15,10 @@ const navItems = [
   { href: '#skills',       label: t.nav.skills,       num: '04' },
   { href: '#contact',      label: t.nav.contact,      num: '05' },
 ];
+
+const langToggle = lang === 'pl'
+  ? { label: 'EN', href: '/en/', title: 'Switch to English' }
+  : { label: 'PL', href: '/', title: 'Przełącz na polski' };
 ---
 
 <header class="flex flex-col gap-4 lg:sticky lg:top-0 lg:max-h-screen lg:justify-between lg:py-24">
@@ -82,5 +87,26 @@ const navItems = [
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
       </svg>
     </a>
+    <!-- Language toggle -->
+    <a
+      href={langToggle.href}
+      class="social-link text-xs font-bold tracking-widest uppercase"
+      aria-label={langToggle.title}
+      title={langToggle.title}
+      data-lang={langToggle.label.toLowerCase()}
+      id="lang-toggle"
+    >
+      {langToggle.label}
+    </a>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('lang-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const targetLang = toggle.getAttribute('data-lang');
+      localStorage.setItem('preferred-lang', targetLang);
+    });
+  }
+</script>

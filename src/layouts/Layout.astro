@@ -1,22 +1,29 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n/translations';
 
 interface Props {
+  lang: Lang;
   title: string;
   description: string;
   keywords: string;
   ogTitle: string;
   ogDescription: string;
   canonicalUrl: string;
+  alternateEn: string;
+  alternatePl: string;
 }
 
 const {
+  lang,
   title,
   description,
   keywords,
   ogTitle,
   ogDescription,
   canonicalUrl,
+  alternateEn,
+  alternatePl,
 } = Astro.props;
 
 const siteUrl = 'https://kamiljaworski.pl';
@@ -30,7 +37,15 @@ const personSchema = {
   jobTitle: '.NET Software Engineer',
   description:
     '.NET Software Engineer specialising in C#, cloud architecture and distributed systems.',
-  knowsAbout: ['.NET', 'C#', 'ASP.NET Core', 'Azure', 'AWS', 'Microservices', 'Docker'],
+  knowsAbout: [
+    'C#', '.NET', '.NET 8', 'ASP.NET Core', 'ASP.NET MVC',
+    'Entity Framework', 'MassTransit', 'xUnit', 'Moq', 'NSubstitute',
+    'TypeScript', 'JavaScript', 'SQL', 'jQuery', 'Angular',
+    'AWS', 'Microsoft Azure', 'Docker', 'Terraform',
+    'Azure Service Bus', 'AWS SQS/SNS', 'LocalStack',
+    'SQL Server', 'MongoDB', 'Redis',
+    'Microservices', 'CQRS', 'Event-driven architecture', 'REST API', 'Scrum',
+  ],
   sameAs: [
     'https://www.linkedin.com/in/jaworskikamil/',
     'https://github.com/kamiljaworski',
@@ -44,7 +59,7 @@ const personSchema = {
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,8 +71,11 @@ const personSchema = {
     <meta name="author" content="Kamil Jaworski" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Canonical -->
+    <!-- Canonical & hreflang -->
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="pl" href={alternatePl} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternatePl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -65,7 +83,7 @@ const personSchema = {
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
