@@ -24,26 +24,6 @@ const siteUrl = 'https://kamiljaworski.pl';
   alternatePl={`${siteUrl}/`}
   alternateEn={`${siteUrl}/en/`}
 >
-  <!-- Language routing: respect saved preference, fall back to browser language -->
-  <script is:inline>
-    (function () {
-      var saved = localStorage.getItem('preferred-lang');
-      if (saved === 'en') {
-        window.location.replace('/en/');
-        return;
-      }
-      if (!saved) {
-        var browserLang = navigator.language || navigator.userLanguage || '';
-        if (!browserLang.toLowerCase().startsWith('pl')) {
-          localStorage.setItem('preferred-lang', 'en');
-          window.location.replace('/en/');
-          return;
-        }
-        localStorage.setItem('preferred-lang', 'pl');
-      }
-    })();
-  </script>
-
   <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
     <div class="lg:flex lg:justify-between lg:gap-4">
       <!-- Left: sticky sidebar -->
