@@ -200,7 +200,7 @@ export const translations = {
           name: 'AWS Certified Cloud Practitioner',
           issuer: 'Amazon Web Services (AWS)',
           issued: 'Nov 2023',
-          expires: 'Nov 2026',
+          expires: 'Nov 6, 2029',
           url: 'https://credly.com/badges/ba05fab3-b9cf-40ee-a160-c7b80b8f59e7/linked_in_profile',
         },
         {
@@ -522,7 +522,7 @@ export const translations = {
           name: 'AWS Certified Cloud Practitioner',
           issuer: 'Amazon Web Services (AWS)',
           issued: 'Lis 2023',
-          expires: 'Lis 2026',
+          expires: '6 lis 2029',
           url: 'https://credly.com/badges/ba05fab3-b9cf-40ee-a160-c7b80b8f59e7/linked_in_profile',
         },
         {
